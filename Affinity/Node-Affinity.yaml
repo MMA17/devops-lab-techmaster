@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: with-node-affinity-2
+spec:
+  affinity:
+    nodeAffinity:
+    #  requiredDuringSchedulingIgnoredDuringExecution:
+    #     nodeSelectorTerms:
+    #     - matchExpressions:
+    #       - key: test-label
+    #         operator: In
+    #         values:
+    #         - abc
+      preferredDuringSchedulingIgnoredDuringExecution:
+        - weight: 1
+          preference:
+            matchExpressions:
+            - key: region
+              operator: In
+              values:
+              - HoChiMinh
+  containers:
+  - name: with-node-affinity
+    image: k8s.gcr.io/pause:2.0
