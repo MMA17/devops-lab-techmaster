@@ -13,6 +13,6 @@ spec:
     - containerPort: 6379
     readinessProbe:
       tcpSocket:
-        port: 6379
+        port: 6000
       initialDelaySeconds: 5
       periodSeconds: 10

@@ -1,0 +1,21 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: testrbac-role
+  namespace: developer
+rules:
+  - verbs:
+      - get
+      - list
+      - watch
+      - update
+      - patch
+    apiGroups:
+      - ''
+      - extensions
+      - apps
+      - apps/v1
+    resources:
+      - pods
+      - pods/log
+      - pods/exec

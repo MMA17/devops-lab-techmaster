@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: nginx-2
+  name: nginx
   labels:
     env: test
 spec:
@@ -10,4 +10,4 @@ spec:
     image: nginx
     imagePullPolicy: IfNotPresent
   nodeSelector:
-    region: HoChiMinh
+    region: HaNoi
